@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../js/jquery-1.11.2.min.js"></script>
+        <script src="../js/script.js"></script>
+	</head>
+
+	<body>
+
+
+		<img id="cat_licking" src="gate_cat_licking.png" alt="gate to Purr City" />
+
+		<h3>Entrance to Purr City - Free for all cats.  3 purr coins for humans.
+		  </h3>
+
+		  <p>How do you get past the Pawkeeper?</p>
+
+
+			<script> // prompt("You see a cat outside purr city entrance - the pawkeeper.  How do you get a purr coin?  You have milk and some chicken. What do you do?")
+			$(document).ready(function(){
+				setTimeout(catSpeaks, 5000, "Oh, you're not a cat!");
+				setTimeout(catSpeaks, 7000, "You can't come through");
+				setTimeout(catSpeaks, 9000, "Hmmmm, I can smell food");
+				setTimeout("$('#cat_licking').attr('src','gate_cat_sideways.png');", 4000);
+			});
+
+			</script>
+
+			<form id="entrance">
+				<input type="radio" name="option" value="The cat likes it but looks at you expectantly"> You stroke it.<br />
+
+				<input type="radio" name="option" value="The cat drinks it and smiles">You give it milk<br/>
+
+				<input type="radio" name="option" value="The cat eats it and smiles"> You give it the chicken<br />
+
+				<input type="submit" value="pick one" />
+			</form>
+			<p><!--
+
+			Action 1 - give it milk/chicken
+
+			Action 2- give it milk or chicken
+
+			The cat must be fed both milk or chicken in order to sneak in.
+
+			If you stroke it without feeding it both milk and chicken, it will miaow and look at you expectantly and sniff at your bag.
+
+
+			You stroke it under the chin and belly.  It rolls over and purrs.  A purr coin comes out of its mouth.
+
+			 Now you have three purr coins. The cat gets up and continues through the cat flap to Purr City and beckons you to follow.
+
+			You put it through the slot - human entrance - 3 purr coins.....welcome to Purr City.  The human gate opens.--> </p>
+
+			<p>No cats were harmed in this production. </p>
+		</div>
