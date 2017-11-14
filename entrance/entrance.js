@@ -49,35 +49,12 @@ $(document).ready(function() {
       pickedMilk();
     }
     if (milk == true && chicken == true) {
-      catSpeaks("Yum, I think I will have a nap now");
       setTimeout("$('#cat_licking').attr('src','gate_cat_back.png');", 3000);
-      catSpeaks(
-        "Take the key from the cat and go unlock the gates to Purr City"
-      );
+			setTimeout(catSpeaks, 5000, "Yum, I think I will have a nap now");
+      setTimeout(catSpeaks, 7000, "Take the key from the cat and go unlock the gates to Purr City");
       setTimeout(function() {
         window.location.href = "../gandalf/gandalf.html";
-      }, 3000);
+      }, 9000);
     }
   });
 });
-
-	 //setTimeout(window.location.href = "../gandalf/gandalf.html", 3000);}
-
-
-
-
- /*Actions - Gandalf scene - will bring you on the bus.
- Bus scene
-
- You will be transported to Purr City.  You now have a cat avatar.  You are equipped with 6 purr coins
- which is the currency in Purr City.  You can earn extra Purr coins, and you can purchase goods and services with Purr coins.
- Click to enter Purr City
-
- On the bus, place your paw over the meter to pay your fare.  1 purr coin has been deducted.
- Set a counter. You now have 5 purr coins.
-
- Can I create a counter?
-
- 	//$.cookieBar();
-
- */
