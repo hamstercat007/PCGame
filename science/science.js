@@ -34,7 +34,7 @@ $(document).ready(function() {
     $(".questions").append("<div class='options'></div>")
     for (let i=0; i<questions.length; i++) {
         console.log(questions[i].key);
-        $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label>") 
+        $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
         $("#"+questions[i].answer).click (function() {
             $(this).css("color", "blue");
             console.log(this);
