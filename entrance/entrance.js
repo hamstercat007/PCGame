@@ -49,7 +49,7 @@ $(document).ready(function() {
       pickedMilk();
     }
     if (milk == true && chicken == true) {
-      setTimeout("$('#cat_licking').attr('src','gate_cat_back.png');", 3000);
+      setTimeout("$('#cat_licking').attr('src','gate_cat_back.jpg');", 3000);
 			setTimeout(catSpeaks, 5000, "Yum, I think I will have a nap now");
       setTimeout(catSpeaks, 7000, "Take the key from the cat and go unlock the gates to Purr City");
       setTimeout(function() {

@@ -4,9 +4,27 @@
         <script src="../js/jquery-3.2.1.min.js"></script>
         <script src="cat_bus.js"></script>
         <title>The bus to Purr City!</title>
+        <style>
+          *:focus{outline: none;}
+
+          .speech {
+            border: 3px solid black;
+            padding: 20px;
+            border-radius: 50px;
+          }
+        </style>
     </head>
     <body>
-          <img id="bus" src="cat_bus.png" alt="cats on a bus to Purr City">
+      <img id="bus" src="cat_bus.png" alt="cats on a bus to Purr City" usemap="#Map">
+      
+          <map name="Map" id="Map">
+              <area alt="paying bus fare" title="" href="#" shape="poly" style="cursor:url('paw-cursor.png'), default;" coords="267,272,354,269,354,408,293,418,273,412" />
+          </map>
+
+
+
+
+
 
     </body>    
   </html>
