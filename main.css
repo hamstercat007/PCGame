@@ -1,0 +1,22 @@
+.purrCoin {
+  padding: 50px;
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  background-color: white;
+  background-image: url("images/purrCoin.png");
+  background-repeat: no-repeat;
+  font-size: 20px;
+  max-width: 150px;
+  text-align: center;
+}
+
+*:focus {
+  outline: none;
+}
+
+.speech {
+  border: 3px solid black;
+  padding: 20px;
+  border-radius: 50px;
+}

@@ -1,15 +1,3 @@
-function catSpeaks(msg) {
-	var el = document.createElement("div");
-	el.setAttribute(
-		"style",
-		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
-	);
-	el.innerHTML = msg;
-	setTimeout(function() {
-		el.parentNode.removeChild(el);
-	}, 3000);
-	document.body.appendChild(el);
-}
 
 
 

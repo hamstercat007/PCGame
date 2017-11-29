@@ -9,3 +9,7 @@ label {
   position:absolute;top:75%;left:40%;background-color:transparent;
   font-size:32px; max-width:200px; text-align:center
 }
+
+.speech {
+  background-color:yellow;
+}
