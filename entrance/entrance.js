@@ -14,8 +14,9 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:74%;left:60%;background-color:white; font-size:22px; max-width:150px; text-align:center"
-	);
+		"position:absolute;top:50%;left:55%;background-color:white; font-size:22px; max-width:150px; text-align:center"
+  );
+  $(el).addClass('speech');
 	el.innerHTML = msg;
 	setTimeout(function() {
 		el.parentNode.removeChild(el);
@@ -23,12 +24,34 @@ function catSpeaks(msg) {
 	document.body.appendChild(el);
 }
 
+function narratorSpeaks(msg) {
+	var el = document.createElement("div");
+	el.setAttribute(
+		"style",
+		"position:absolute;top:20%;left:15%;background-color:orange; font-size:30px; max-width:200px; text-align:center"
+  );
+  $(el).addClass('speech');
+	el.innerHTML = msg;
+	setTimeout(function() {
+		el.parentNode.removeChild(el);
+	}, 2000);
+	document.body.appendChild(el);
+}
+
+
+
+
+
 
 $(document).ready(function() {
-	setTimeout(catSpeaks, 5000, "Oh, you're not a cat!");
-	setTimeout(catSpeaks, 7000, "You can't come through");
-	setTimeout(catSpeaks, 9000, "Hmmmm, I can smell food");
-	setTimeout("$('#cat_licking').attr('src','gate_cat_sideways.png');", 4000);
+  setTimeout(narratorSpeaks, 500, "Congratulations, you have reached the gates of Purr City")
+  setTimeout(narratorSpeaks, 3500, "But the gates are locked, and guarded by the vigilent Pawkeeper")
+  setTimeout(narratorSpeaks, 6500, "You have a chicken drumstick and some milk in your satchel")
+
+	setTimeout(catSpeaks, 9500, "Oh, you're not a cat!");
+	setTimeout(catSpeaks, 12000, "You can't come through");
+	setTimeout(catSpeaks, 15000, "Hmmmm, I can smell food");
+	setTimeout("$('#cat_licking').attr('src','gate_cat_sideways_short.png');", 4000);
   $("#courses_table .show_more").click(function() {
     $(this)
       .next(".hidden")
@@ -49,9 +72,9 @@ $(document).ready(function() {
       pickedMilk();
     }
     if (milk == true && chicken == true) {
-      setTimeout("$('#cat_licking').attr('src','gate_cat_back.jpg');", 3000);
+      setTimeout("$('#cat_licking').attr('src','gate_cat_back_short.png');", 3000);
 			setTimeout(catSpeaks, 5000, "Yum, I think I will have a nap now");
-      setTimeout(catSpeaks, 7000, "Take the key from the cat and go unlock the gates to Purr City");
+      setTimeout(catSpeaks, 8000, "Take the key from the cat and go unlock the gates to Purr City");
       setTimeout(function() {
         window.location.href = "../gandalf/gandalf.html";
       }, 9000);

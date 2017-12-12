@@ -1,5 +1,3 @@
-
-
 function showPurrCoins() {
     var el = document.createElement("div");
     $(el).addClass('purrCoin');
@@ -13,7 +11,6 @@ function catSpeaks(msg) {
 		"style",
 		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
     );
-    $(el).addClass("speech");
 	el.innerHTML = msg;
 	setTimeout(function() {
 	 	el.parentNode.removeChild(el);
@@ -22,7 +19,7 @@ function catSpeaks(msg) {
 }
 
 
-function narratorSpeaks(msg) {
+function questionStyle (msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
@@ -30,21 +27,16 @@ function narratorSpeaks(msg) {
   );
   $(el).addClass('speech');
 	el.innerHTML = msg;
-	//setTimeout(function() {
-	//	el.parentNode.removeChild(el);
-	//}, 2000);
 	document.body.appendChild(el);
 }
 
-
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Question 1 - Science Time");
-    setTimeout(catSpeaks, 0, "Cats also like to learn!");
+    setTimeout(questionStyle, 250, "Question 2 - The origin of words - Etymology");
     let questions=[
-        {answer:"Electrons", response:"Well done - electrons form part of atoms, the smallest particles possible", correct:true},
-        {answer:"Roe", response:"Close, these are fish eggs.  Very tasty!", correct:false},
-        {answer:"Moons", response:"Close, some planets have several moons orbiting them. For example, Jupiter has 67 moons!", correct:false}
+        {answer:"Scire - to know", response:"Well done - science is about finding things out based on evidence", correct:true},
+        {answer:"Sign - signs of evidence", response:"Not quite, there are certainly signs pointing to discoveries", correct:false},
+        {answer:"Singing", response:"Cats do like to sing; we do have some musical talent", correct:false}
     ]
     $(".questions").append("<div class='options'></div>")
     for (let i=0; i<questions.length; i++) {
@@ -66,30 +58,3 @@ $(document).ready(function() {
         })    
     }
 })
-
-
-
-
-// if (questions.answer == "Electrons") {
-//     localstorage+=1;
-//     setTimeout(catSpeaks, 5000, "Great, you have been awarded 1 Purr Coin")
-//     setTimeout(catSpeaks, 7500, "You now have "+localStorage+" Purr coins")
-//  }
-//  Have a next button? 
-//Load - Where does the word science come from?  Use philosopher cat?
-//Scire- which means to know
-//Alpha beta,
-//
-// What is the scientific name for cat? 
-// Felis Catus
-// Feline
-// Felix
-//
-
-// Spend grooming yourself - you decide to take a break, 
-// Groom yourself or not?
-// You decide to take a break for 2 purr coins
-// You feel refreshed
-// You decide to not take a break - you feel a bit tired... 
-// You wish you had taken a break now. 
-

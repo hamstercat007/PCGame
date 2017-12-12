@@ -12,3 +12,24 @@ function catSpeaks(msg, top, left) {
 	document.body.appendChild(el);
 }
 
+function showPurrCoins() {
+    var el = document.createElement("div");
+    $(el).addClass('purrCoin');
+	el.innerHTML = localStorage.purrCoins;
+	document.body.appendChild(el);
+}
+
+
+function narratorSpeaks(msg) {
+	var el = document.createElement("div");
+	el.setAttribute(
+		"style",
+		"position:absolute;top:20%;left:15%;background-color:orange; font-size:30px; max-width:200px; text-align:center"
+  );
+  $(el).addClass('speech');
+	el.innerHTML = msg;
+	setTimeout(function() {
+		el.parentNode.removeChild(el);
+	}, 2500);
+	document.body.appendChild(el);
+}
