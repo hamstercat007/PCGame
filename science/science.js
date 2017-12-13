@@ -46,10 +46,10 @@ $(document).ready(function() {
         {answer:"Roe", response:"Close, these are fish eggs.  Very tasty!", correct:false},
         {answer:"Moons", response:"Close, some planets have several moons orbiting them. For example, Jupiter has 67 moons!", correct:false}
     ]
-    $(".questions").append("<div class='options'></div>")
-    for (let i=0; i<questions.length; i++) {
-        console.log(questions[i].key);
-        $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
+   
+            $(".questions").append("<div class='options'></div>")
+        for (let i=0; i<questions.length; i++) {
+        console.log(questions[i].key);$(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
         $("#"+questions[i].answer).click (function() {
             $(this).css("color", "blue");
             console.log(this);
@@ -65,6 +65,11 @@ $(document).ready(function() {
             }, 750)
         })    
     }
+    if (questions.answer == "Electrons") {
+           localstorage+=1;
+            setTimeout(catSpeaks, 3500, "Great, you have been awarded 1 Purr Coin")
+            setTimeout(catSpeaks, 5500, "You now have "+localStorage+" Purr coins")
+          }
 })
 
 

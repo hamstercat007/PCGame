@@ -76,7 +76,7 @@ $(document).ready(function() {
 			setTimeout(catSpeaks, 5000, "Yum, I think I will have a nap now");
       setTimeout(catSpeaks, 8000, "Take the key from the cat and go unlock the gates to Purr City");
       setTimeout(function() {
-        window.location.href = "../gandalf/gandalf.html";
+        window.location.href = "../key/key.html";
       }, 9000);
     }
   });

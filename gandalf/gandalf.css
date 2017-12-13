@@ -162,6 +162,10 @@
   transition: transform ease-in 2s;
 }
 
+.earth:hover {
+  cursor: url("paw-cursor.cur"), auto;
+}
+
 /*.earth:hover {
   transform: rotate(360deg);
 }*/
@@ -182,3 +186,6 @@
   transform: rotate(50deg) scale(0.5) scaleX(-1) translate(-100px);
   transition-duration: 2s; 
 }
+
+
+

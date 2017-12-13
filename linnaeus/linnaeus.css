@@ -1,0 +1,27 @@
+label {
+    font-size: 35px;
+    padding-right: 25px;
+    padding-left: 8px;
+  }
+  
+  .questions {
+    position:absolute;top:75%;left:46%;background-color:transparent;
+    font-size:32px; max-width:300px; text-align:center
+  }
+  
+  a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+  
+    text-decoration: none;
+    color: initial;
+    display: inline;
+  }
+
+
+  .speech {
+    border: 5px solid black;
+    padding: 20px;
+    border-radius: 50px;
+  }
