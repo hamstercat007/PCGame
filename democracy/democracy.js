@@ -42,7 +42,7 @@ $(document).ready(function() {
     showPurrCoins();
     setTimeout(narratorSpeaks, 0, "Q3. Does the earth go round the sun, or does the sun go round the earth?");
     let questions=[
-        {answer:"Earth goes round the sun", response:"Yes, it takes the Earth 365 1/4 days to orbit the sun", correct:true},
+        {answer:"Earth", response:"Yes, it takes the Earth 365 1/4 days to orbit the sun", correct:true},
         {answer:"Sun goes round the earth", response:"Not quite, this is what they used to think centuries ago'", correct:false},
     ]
    

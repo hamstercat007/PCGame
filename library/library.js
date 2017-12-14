@@ -54,6 +54,21 @@ $(document).ready(function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
+
+            let val = $(this).val()
+            
+                        if (val === 'Books') {
+                            localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                            setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                            setTimeout(function() {
+                                window.location.href = "../pamper/pamper.html";
+                            }, 8000);
+                        }
+                        
+                        showPurrCoins();
+        
+
+
             setTimeout(catSpeaks, 1000, questions[i].response)
             console.log("Hello");
             setTimeout(function () {

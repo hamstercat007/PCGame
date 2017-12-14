@@ -54,10 +54,10 @@ $(document).ready(function() {
 
     if (val === 'Scire') {
         localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-        setTimeout(catSpeaks, 3000, "You now have "+localStorage.purrCoins+" purr coins");
+        setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
         setTimeout(function() {
             window.location.href = "../linnaeus/linnaeus.html";
-        }, 6000);
+        }, 7000);
     }
     
     showPurrCoins();

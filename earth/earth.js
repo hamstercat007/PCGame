@@ -40,10 +40,10 @@ function narratorSpeaks(msg) {
 
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Q3. Does the earth go round the sun, or does the sun go round the earth?");
+    setTimeout(narratorSpeaks, 0, "Q3. Does the (i) earth go round the sun, or does the (ii) sun go round the earth?");
     let questions=[
-        {answer:"Earth goes round the sun", response:"Yes, it takes the Earth 365 1/4 days to orbit the sun", correct:true},
-        {answer:"Sun goes round the earth", response:"Not quite, this is what they used to think centuries ago'", correct:false},
+        {answer:"Earth", response:"Yes, it takes the Earth 365 1/4 days to orbit the sun", correct:true},
+        {answer:"Sun", response:"Not quite, this is what they used to think centuries ago", correct:false},
     ]
    
             $(".questions").append("<div class='options'></div>")
@@ -53,6 +53,20 @@ $(document).ready(function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
+
+            let val = $(this).val()
+            
+                        if (val === 'Earth') {
+                            localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                            setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                            setTimeout(function() {
+                                window.location.href = "../pamper/pamper.html";
+                            }, 8000);
+                        }
+                        
+                        showPurrCoins();
+            
+
             setTimeout(catSpeaks, 1000, questions[i].response)
             console.log("Hello");
             setTimeout(function () {
