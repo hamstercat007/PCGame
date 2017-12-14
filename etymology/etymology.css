@@ -10,11 +10,19 @@ label {
   }
   
   a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-  
-    text-decoration: none;
-    color: initial;
-    display: inline;
-  }
+        text-decoration: none;
+        color: white;
+        display: inline;
+        position: absolute;
+        top: 75%;
+        left: 70%;
+        background-color: black;
+        font-size: 32px;
+        max-width: 200px;
+        text-align: center;
+        padding: 10px;
+    }
+
+.options {
+  width: 500px;
+}

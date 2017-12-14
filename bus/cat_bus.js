@@ -32,10 +32,10 @@ $(document).ready(function() {
     setTimeout(catSpeaks, 10500, "Please place your paw over the card reader to pay your fare");
     
 
-$("#Map").on("click", function(e){
+$("#Map").one("click", function(e){
     e.preventDefault();
-    setTimeout(catSpeaks, 1000, "You now have 6 purr coins left");
-        localStorage.purrCoins-=1;
+    localStorage.purrCoins-=1;
+    setTimeout(catSpeaks, 1000, "You now have "+localStorage.purrCoins+" purr coins");
         showPurrCoins();
         setTimeout(catSpeaks, 3500, "Sit down and enjoy the ride to Purr City!")
         setTimeout("$('#bus').attr('src','bootcamp.png');", 6500);

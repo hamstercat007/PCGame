@@ -41,23 +41,42 @@ $(document).ready(function() {
 
     $(".questions").append("<div class='options'></div>")
     for (let i=0; i<questions.length; i++) {
-    console.log(questions[i].key);$(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
-    $("#"+questions[i].answer).click (function() {
+    $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
+    
+    
+    $("#"+questions[i].answer).one ("click", function() {
         $(this).css("color", "blue");
         console.log(this);
         $(this).prop('checked', true);
+
+
+    let val = $(this).val()
+
+    if (val === 'Scire') {
+        localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+        setTimeout(catSpeaks, 3000, "You now have "+localStorage.purrCoins+" purr coins");
+        setTimeout(function() {
+            window.location.href = "../linnaeus/linnaeus.html";
+        }, 6000);
+    }
+    
+    showPurrCoins();
+
+
+
         setTimeout(catSpeaks, 1000, questions[i].response)
-        console.log("Hello");
         setTimeout(function () {
             $("input:radio").each(function () {  
                 $(this).removeAttr('checked');
                 $('input[type="radio"]').prop('checked', false);
                })
-               console.log("Time delay")
         }, 750)
         })    
     }
 })
+
+
+
 
 
 

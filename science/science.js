@@ -49,13 +49,30 @@ $(document).ready(function() {
    
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
-        console.log(questions[i].key);$(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
-        $("#"+questions[i].answer).click (function() {
+            $(".questions").append(
+              "<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>"
+            )
+
+            $("#"+questions[i].answer).one ("click", function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
+
+            
+           
+            let val = $(this).val()
+
+            if (val === 'Electrons') {
+                localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                setTimeout(function() {
+                    window.location.href = "../etymology/etymology.html";
+                }, 75000);
+            }
+            
+            showPurrCoins();
+
             setTimeout(catSpeaks, 1000, questions[i].response)
-            console.log("Hello");
             setTimeout(function () {
                 $("input:radio").each(function () {  
                     $(this).removeAttr('checked');
@@ -65,36 +82,7 @@ $(document).ready(function() {
             }, 750)
         })    
     }
-    if (questions.answer == "Electrons") {
-           localstorage+=1;
-            setTimeout(catSpeaks, 3500, "Great, you have been awarded 1 Purr Coin")
-            setTimeout(catSpeaks, 5500, "You now have "+localStorage+" Purr coins")
-          }
 })
 
 
-
-
-// if (questions.answer == "Electrons") {
-//     localstorage+=1;
-//     setTimeout(catSpeaks, 5000, "Great, you have been awarded 1 Purr Coin")
-//     setTimeout(catSpeaks, 7500, "You now have "+localStorage+" Purr coins")
-//  }
-//  Have a next button? 
-//Load - Where does the word science come from?  Use philosopher cat?
-//Scire- which means to know
-//Alpha beta,
-//
-// What is the scientific name for cat? 
-// Felis Catus
-// Feline
-// Felix
-//
-
-// Spend grooming yourself - you decide to take a break, 
-// Groom yourself or not?
-// You decide to take a break for 2 purr coins
-// You feel refreshed
-// You decide to not take a break - you feel a bit tired... 
-// You wish you had taken a break now. 
 
