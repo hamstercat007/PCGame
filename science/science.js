@@ -63,12 +63,17 @@ $(document).ready(function() {
             let val = $(this).val()
 
             if (val === 'Electrons') {
+                   
+                if(localStorage.level < 1) {
+                    localStorage.level++;
+    
                 localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                 setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
                 setTimeout(function() {
                     window.location.href = "../etymology/etymology.html";
-                }, 75000);
-            }
+                }, 8000);
+            } 
+         }
             
             showPurrCoins();
 

@@ -40,7 +40,7 @@ function narratorSpeaks(msg) {
 
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Q3. Does the (i) earth go round the sun, or does the (ii) sun go round the earth?");
+    setTimeout(narratorSpeaks, 0, "Q3. Does the earth go round the sun, or does the sun go round the earth?");
     let questions=[
         {answer:"Earth", response:"Yes, it takes the Earth 365 1/4 days to orbit the sun", correct:true},
         {answer:"Sun", response:"Not quite, this is what they used to think centuries ago", correct:false},
@@ -49,7 +49,7 @@ $(document).ready(function() {
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
         $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
-        $("#"+questions[i].answer).click (function() {
+        $("#"+questions[i].answer).one ("click", function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
@@ -57,13 +57,16 @@ $(document).ready(function() {
             let val = $(this).val()
             
                         if (val === 'Earth') {
-                            localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-                            setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                            setTimeout(function() {
-                                window.location.href = "../pamper/pamper.html";
-                            }, 8000);
+                            if(localStorage.level < 6) {
+                                localStorage.level++; 
+                                console.log(localStorage.level)   
+                                localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                                setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                                setTimeout(function() {
+                                    window.location.href = "../pamper/pamper.html";
+                                }, 8000);
+                            }
                         }
-                        
                         showPurrCoins();
             
 

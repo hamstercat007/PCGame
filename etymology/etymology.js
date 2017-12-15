@@ -11,6 +11,7 @@ function catSpeaks(msg) {
 		"style",
 		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
     );
+    $(el).addClass('speech');
 	el.innerHTML = msg;
 	setTimeout(function() {
 	 	el.parentNode.removeChild(el);
@@ -48,21 +49,25 @@ $(document).ready(function() {
         $(this).css("color", "blue");
         console.log(this);
         $(this).prop('checked', true);
+        console.log(localStorage.level);
 
 
     let val = $(this).val()
 
     if (val === 'Scire') {
-        localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-        setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-        setTimeout(function() {
-            window.location.href = "../linnaeus/linnaeus.html";
-        }, 7000);
+
+        if(localStorage.level < 2) {
+            localStorage.level++;
+
+            localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+            setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+            setTimeout(function() {
+                window.location.href = "../linnaeus/linnaeus.html";
+            }, 7000);
+        }
     }
     
     showPurrCoins();
-
-
 
         setTimeout(catSpeaks, 1000, questions[i].response)
         setTimeout(function () {

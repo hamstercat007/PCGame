@@ -27,6 +27,7 @@ function showPurrCoins() {
 $(document).ready(function() {
     setTimeout(catSpeaks, 3000, "You are allocated 7 purr coins to start your adventure into Purr City");
     localStorage.setItem("purrCoins", 7);
+    localStorage.setItem("level", 0);
     showPurrCoins();
     setTimeout(catSpeaks, 7000, "The bus fare is 1 purr coin");
     setTimeout(catSpeaks, 10500, "Please place your paw over the card reader to pay your fare");

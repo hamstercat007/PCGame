@@ -11,6 +11,7 @@ function catSpeaks(msg) {
 		"style",
 		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
     );
+    $(el).addClass('speech');
 	el.innerHTML = msg;
 	setTimeout(function() {
 	 	el.parentNode.removeChild(el);
@@ -35,32 +36,34 @@ $(document).ready(function() {
     setTimeout(questionStyle, 250,  "Q3 What is the scientific (binomial) name for cat?" );
     let questions=[
         {answer:"Feline", response:"Very close, a feline is a member of the cat family", correct:false},
-        {answer:"Felis_Catus", response:"Yes, bi means two, nomen means name.  Carl Linnaeus gave all species a latin name to classify them", correct:true},
+        {answer:"Felis Catus", response:"Yes, bi means two, nomen means name.  Carl Linnaeus gave all species a latin name to classify them", correct:true},
         {answer:"Felix", response:"Close, lots of cats are called Felix, it is a popular name", correct:false}
     ]
 
     $(".questions").append("<div class='options'></div>")
     for (let i=0; i<questions.length; i++) {
-    $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
-    $("#"+questions[i].answer).click (function() {
+        $(".questions").append("<input type='radio' id="+questions[i].answer.replace(' ', '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(' ', '')+">"+questions[i].answer+"</label><br>")
+        $("#"+questions[i].answer.replace(' ', '')).one ("click", function() {
         $(this).css("color", "blue");
         console.log(this);
         $(this).prop('checked', true);
 
         let val = $(this).val()
-        
-                    if (val === 'Felis_Catus') {
-                        localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-                        setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                        setTimeout(function() {
-                            window.location.href = "../naptime/naptime.html";
-                        }, 8000);
-                    }
+    
+            if (questions[i].answer === "Felis Catus") {
+                if(localStorage.level < 3) {
+                    localStorage.level++;
+                    console.log(localStorage.level)
+                    localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                    console.log(localStorage.purrCoins);
+                    setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                    setTimeout(function() {
+                        window.location.href = "../naptime/naptime.html";
+                    }, 8000);
+                }
+            } 
                     
                     showPurrCoins();
-        
-
-
 
         setTimeout(catSpeaks, 1000, questions[i].response);
         setTimeout(function () {
