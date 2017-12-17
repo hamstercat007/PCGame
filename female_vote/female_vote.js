@@ -9,7 +9,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:63%;background-color:white; font-size:30px; max-width:3 00px; text-align:center"
+		"position:absolute;top:30%;left:63%;background-color:white; font-size:35px; max-width:250px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
@@ -24,40 +24,34 @@ function showQuestion(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:1%;left:40%;background-color:white; font-size:40px; max-width:300px; text-align:center"
+		"position:absolute;top:4%;left:40%;background-color:orange; font-size:30px; max-width:300px; text-align:center; padding-left:15px"
     );
     $(el).addClass("speech");
     el.innerHTML = msg;
     document.body.appendChild(el);
 }
 
+function signpost(msg) {
 
-function narratorSpeaks(msg) {
-	var el = document.createElement("div");
-	el.setAttribute(
-		"style",
-		"position:absolute;top:1%;left:0%;background-color:orange; font-size:40px; max-width:280px; text-align:center"
-  );
-  $(el).addClass('speech');
-	el.innerHTML = msg;
-	//setTimeout(function() {
-	//	el.parentNode.removeChild(el);
-	//}, 2000);
-	document.body.appendChild(el);
+    var el = document.createElement("div");
+    el.setAttribute(
+        "style",
+        "position:absolute;top:4%;left:2%;background-color:transparent; font-size:35px; max-width:250px; text-align:left; padding-left:15px"
+    );
+    el.innerHTML = msg;
+    document.body.appendChild(el);
 }
-
 
 
 
 
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Welcome to the Statue of Liberty");
-    setTimeout(showQuestion, 1000, "Which was the first country to allow women to vote?");
+    signpost("The Statue of Liberty, <br>based in New York, United States of America");
+    showQuestion("Level 3<br>Q4. Which was the first country to allow women to vote?");
     let questions=[
         {answer:"Great Britain", response:"Not quite, Great Britain passed this law in 1928, although women were allowed to vote in 1918 but had to own property and be over 30 years old", correct:false},
         {answer:"United States", response:"Not quite, the United States passed this law in 1920 ", correct:false},
-        {answer:"Finland", response:"Not quite, Finland passed this in 1906", correct:false},
         {answer:"New Zealand", response:"Yes, New Zealand passed this in 1893", correct:true}
     ]
    

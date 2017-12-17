@@ -6,7 +6,7 @@ label {
   }
   
   .questions {
-    position:absolute;top:40%;left:45%;background-color:violet;
+    position:absolute;top:40%;left:45%;background-color:transparent;
     font-size:32px; max-width:200px; text-align:left
   }
   
