@@ -6,7 +6,7 @@ label {
   
   .questions {
     position:absolute;top:75%;left:46%;background-color:transparent;
-    font-size:32px; max-width:350px; text-align:center
+    font-size:32px; max-width:350px; text-align:left;
   }
   
   a.button {
@@ -22,10 +22,3 @@ label {
         text-align: center;
         padding: 10px;
     }
-
-
-  .speech {
-    border: 5px solid black;
-    padding: 20px;
-    border-radius: 50px;
-  }

@@ -9,7 +9,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:65%;background-color:white; font-size:40px; max-width:200px; text-align:center"
+		"position:absolute;top:27%;left:65%;background-color:white; font-size:35px; max-width:250px; text-align:center"
     );
 
     $(el).addClass("speech");
@@ -21,27 +21,12 @@ function catSpeaks(msg) {
 }
 
 
-function narratorSpeaks(msg) {
-	var el = document.createElement("div");
-	el.setAttribute(
-		"style",
-		"position:absolute;top:0%;left:0%;background-color:orange; font-size:40px; max-width:225px; text-align:center"
-  );
-  $(el).addClass('speech');
-	el.innerHTML = msg;
-	//setTimeout(function() {
-	//	el.parentNode.removeChild(el);
-	//}, 2000);
-	document.body.appendChild(el);
-}
-
-
 
 
 
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Q2. What does the word 'mare' mean?");
+    showQuestion("Level 2<br>Q2. What does the word 'mare' mean?");
     let questions=[
         {answer:"Marker", response:"Not quite, try again", correct:false},
         {answer:"Sea", response:"Yes, that's where we also get the word 'maritime' and 'marine' from", correct:false},
@@ -51,7 +36,7 @@ $(document).ready(function() {
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
         console.log(questions[i].key);$(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
-        $("#"+questions[i].answer).one ("click", function() {
+        $("#"+questions[i].answer).on("click", function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
@@ -62,11 +47,11 @@ $(document).ready(function() {
                             if(localStorage.level < 5) {
                                 localStorage.level++;    
                                 localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                            }
                                 setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
                                 setTimeout(function() {
                                     window.location.href = "../earth/earth.html";
                                 }, 8000);
-                            }
                         }
                         showPurrCoins();
             

@@ -35,6 +35,8 @@ $(document).ready(function() {
 
 $("#Map").one("click", function(e){
     e.preventDefault();
+    let audio = new Audio('beep.mp3');
+    audio.play();
     localStorage.purrCoins-=1;
     setTimeout(catSpeaks, 1000, "You now have "+localStorage.purrCoins+" purr coins");
         showPurrCoins();

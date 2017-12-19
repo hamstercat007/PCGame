@@ -17,6 +17,8 @@ $(document).ready(function() {
   
     $("#Map").on("click", function(e){
         e.preventDefault();
+        let audio = new Audio('alert1.mp3');
+        audio.play();
         setTimeout(catSpeaks, 500, "Open the gates before the cat wakes up");
 
         setTimeout(function() {

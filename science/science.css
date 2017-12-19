@@ -7,10 +7,8 @@ label {
 
 .questions {
   position:absolute;top:75%;left:40%;background-color:transparent;
-  font-size:32px; max-width:200px; text-align:center
+  font-size:32px; max-width:200px; text-align:left;
 }
-
-
 
 a.button {
 
@@ -26,3 +24,4 @@ a.button {
     text-align: center;
     padding: 10px;
 }
+

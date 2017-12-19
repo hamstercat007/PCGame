@@ -6,7 +6,7 @@ label {
   
   .questions {
     position:absolute;top:15%;left:46%;background-color:transparent;
-    font-size:32px; max-width:350px; text-align:center
+    font-size:32px; max-width:350px; text-align:left
   }
   
   a.button {

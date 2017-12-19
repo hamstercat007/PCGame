@@ -17,6 +17,8 @@ $(document).ready(function() {
   
     $("#Map").on("click", function(e){
         e.preventDefault();
+        let audio = new Audio('alert1.mp3');
+        audio.play();
         setTimeout(catSpeaks, 500, "Now unlock the gates");
         console.log("I'm working")
         setTimeout(function() {
@@ -24,4 +26,5 @@ $(document).ready(function() {
         }, 3000);
     });
 })
+
 

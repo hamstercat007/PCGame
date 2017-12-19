@@ -9,67 +9,60 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:63%;background-color:white; font-size:40px; max-width:200px; text-align:center"
+		"position:absolute;top:30%;left:63%;background-color:white; font-size:40px; max-width:250px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
 	setTimeout(function() {
 	 	el.parentNode.removeChild(el);
-	 }, 4000);
+	 }, 3000);
 	document.body.appendChild(el);
 }
 
-
-function narratorSpeaks(msg) {
+function showQuestion(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:1%;left:2%;background-color:orange; font-size:40px; max-width:325px; text-align:center"
+		"position:absolute;top:2%;left:2%;background-color:orange; font-size:30px; max-width:350px; text-align:left; padding-left:15px"
   );
   $(el).addClass('speech');
 	el.innerHTML = msg;
-	//setTimeout(function() {
-	//	el.parentNode.removeChild(el);
-	//}, 2000);
 	document.body.appendChild(el);
 }
 
-
-
-
-
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Q3. Who is the goddess driving the chariot?");
+    showQuestion("Level 3<br>Q5. Who is the Greek goddess driving the chariot?");
     let questions=[
-        {answer:"Venus", response:"Not quite, Venus was the Roman goddess of beauty", correct:false},
-        {answer:"Athena", response:"Not quite, Athena was the Greek goddess of wisdom and war, and the patron of the Greek city of Athens", correct:false},
-        {answer:"Nike", response:"Yes, Nike means victory in Greek, she is the Greek goddess of victory", correct:true}
+        {answer:"Venus", response:"Not quite, Venus was the Roman goddess of beauty", note: "her Greek counterpart is known as Aphrodite", correct:false, },
+        {answer:"Athena", response:"Not quite, Athena was the Greek goddess of wisdom and war", note: "and the patron (the guardian) of the Greek city of Athens", correct:false},
+        {answer:"Nike", response:"Yes, Nike means victory in Greek, she is the Greek goddess of victory", note:"She carries a wreath in her hand, ready to crown a victor", correct:true}
     ]
    
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
         $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
-        $("#"+questions[i].answer).one ("click", function() {
+        $("#"+questions[i].answer).on("click", function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
 
             let val = $(this).val()
             
-                        if (val === 'Nike') {
-                            localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-                            setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                            setTimeout(function() {
-                                window.location.href = "../earth/earth.html";
-                            }, 8000);
-                        }
-                        
+                if (val === 'Nike') {
+                    if(localStorage.level < 13) {
+                        localStorage.level++;    
+                        localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                        setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                        setTimeout(function() {
+                        window.location.href = "../roman/roman.html";
+                        }, 8000);
+                     }
+                }
                         showPurrCoins();
             
-
-
             setTimeout(catSpeaks, 1000, questions[i].response)
+            setTimeout(catSpeaks, 4000, questions[i].note)
             console.log("Hello");
             setTimeout(function () {
                 $("input:radio").each(function () {  

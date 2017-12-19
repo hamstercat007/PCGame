@@ -33,3 +33,15 @@ function narratorSpeaks(msg) {
 	}, 2500);
 	document.body.appendChild(el);
 }
+
+function showQuestion(msg) {
+	var el = document.createElement("div");
+	el.setAttribute(
+		"style",
+		"position:absolute;top:2%;left:2%;background-color:orange; font-size:30px; max-width:225px; text-align:left; padding-left:15px"
+  );
+  $(el).addClass('speech');
+	el.innerHTML = msg;
+	document.body.appendChild(el);
+}
+

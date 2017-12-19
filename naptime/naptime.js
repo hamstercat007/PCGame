@@ -38,7 +38,9 @@ function narratorSpeaks(msg) {
 $(document).ready(function() {
     showPurrCoins();
     setTimeout(narratorSpeaks, 0, "Naptime!");
-    setTimeout(catSpeaks, 1000, "Take a snooze!");
+	setTimeout(catSpeaks, 1000, "Take a snooze!");
+	let audio = new Audio('cat-purring.mp3');
+    audio.play();
     setTimeout(catSpeaks, 3000, "You've earnt it! When you're ready, click 'Next'!");
     setTimeout(catSpeaks, 5000, "Hmmm, seabass or cod, what should I have for dinner?");
 })

@@ -22,24 +22,9 @@ function catSpeaks(msg) {
 }
 
 
-function narratorSpeaks(msg) {
-	var el = document.createElement("div");
-	el.setAttribute(
-		"style",
-		"position:absolute;top:10%;left:0%;background-color:orange; font-size:40px; max-width:175px; text-align:center"
-  );
-  $(el).addClass('speech');
-	el.innerHTML = msg;
-	//setTimeout(function() {
-	//	el.parentNode.removeChild(el);
-	//}, 2000);
-	document.body.appendChild(el);
-}
-
-
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Question 1 - Science Time");
+    showQuestion("Level 1</br>Q1: Science Time");
     setTimeout(catSpeaks, 0, "Cats also like to learn!");
     let questions=[
         {answer:"Electrons", response:"Well done - electrons form part of atoms, the smallest particles possible", correct:true},
@@ -53,7 +38,7 @@ $(document).ready(function() {
               "<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>"
             )
 
-            $("#"+questions[i].answer).one ("click", function() {
+            $("#"+questions[i].answer).on("click", function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);

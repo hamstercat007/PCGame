@@ -9,7 +9,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
+		"position:absolute;top:30%;left:60%;background-color:white; font-size:35px; max-width:250px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
@@ -20,54 +20,48 @@ function catSpeaks(msg) {
 }
 
 
-function narratorSpeaks(msg) {
+function showQuestion(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:25%;left:4%;background-color:orange; font-size:40px; max-width:225px; text-align:center"
+		"position:absolute;top:26%;left:4%;background-color:orange; font-size:30px; max-width:225px; text-align:left; padding:15px"
   );
   $(el).addClass('speech');
 	el.innerHTML = msg;
-	//setTimeout(function() {
-	//	el.parentNode.removeChild(el);
-	//}, 2000);
 	document.body.appendChild(el);
 }
 
-
-
-
-
 $(document).ready(function() {
     showPurrCoins();
-    setTimeout(narratorSpeaks, 0, "Q1. What does HTML stand for?");
+    showQuestion("Level 3<br>Q1. What does HTML stand for?");
     let questions=[
-        {answer:"Hypertext Markup", response:"Yes, it stands for Hypertext Markup Language", correct:true},
-        {answer:"Hickory Tickory Miaow Land", response:"Not quite, good try though!", correct:false},
+        {answer:"Hypertext Markup Language", response:"Yes, it stands for Hypertext Markup Language", correct:true, note: "It can be used to create websites and apps"},
+        {answer:"Hickory Tickory Miaow Land", response:"Not quite", correct:false, note: "Good guess though!"},
     ]
    
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
-            $(".questions").append("<input type='radio' id="+questions[i].answer.replace(' ', '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(' ', '')+">"+questions[i].answer+"</label><br>") 
-            $("#"+questions[i].answer.replace(' ', '')).one ("click", function() {
+            $(".questions").append("<input type='radio' id="+questions[i].answer.replace(/ /g, '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(/ /g, '')+">"+questions[i].answer+"</label><br>") 
+            $("#"+questions[i].answer.replace(/ /g, '')).on("click", function() {
                 $(this).css("color", "blue");
                 console.log(this);
                 $(this).prop('checked', true);
                 let val = $(this).val()  
                 
-                if (questions[i].answer === "Hypertext Markup") {
+                if (questions[i].answer === "Hypertext Markup Language") {
                     if(localStorage.level < 6) {
                         localStorage.level++;    
                         localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-                        setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                        setTimeout(function() {
-                            window.location.href = "../pamper/pamper.html";
-                        }, 8000);
                     }
+                        setTimeout(catSpeaks, 7000, "You now have "+localStorage.purrCoins+" purr coins");
+                        setTimeout(function() {
+                            window.location.href = "../democracy/democracy.html";
+                        }, 9000);
                 }
                         showPurrCoins();
             
             setTimeout(catSpeaks, 1000, questions[i].response)
+            setTimeout(catSpeaks, 3500, questions[i].note)
             setTimeout(function () {
                 $("input:radio").each(function () {  
                     $(this).removeAttr('checked');
