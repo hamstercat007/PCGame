@@ -5,19 +5,25 @@
                 <link rel="stylesheet" href="construction.css">
                 <script src="../js/jquery-3.2.1.min.js"></script>
                 <!--<script src="../main.js"></script>-->
+                <script src="md5.min.js"></script>
                 <script src="construction.js"></script>
         </head>
         <body>
+             
+
             <img src="less_cats_building776.png" alt="Cats building Purr City"/>
 
-              
-        
-            <a href="../construction/construction.html" class="button1">Give 3 purr coins to access code</a>
-            
-            <a href="../construction/construction.html" class="button2">Enter Access code</a>
+            <button class="button1">Give 3 purr coins to access code</button>
+            <button class="button2">Enter Access code</button>
+
+            <div class="access_code_block">
+                    Access Code
+                    <input type="text" name="access_code" class="access_code" >
+                    <button class="access_code_button">Submit</button>
+                </div>
 
 
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <form name="morePaws" class="morePaws" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="CHU5RNYLSF8YC">
                 <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">

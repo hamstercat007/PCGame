@@ -38,14 +38,33 @@ $(document).ready(function() {
             setTimeout(catSpeaks, 3500, "Purr coins are needed to hire more paws")
             setTimeout(catSpeaks, 6000, "Donations are welcome, and an access code will be given to the first and second level")
 
+            $(".button2").on("click", function() {
+            	$(".access_code_block").show();
+			});
+			
+			$(".button1").on("click", function() {
+				$(".morePaws").submit();
+			})
+			
+            $(".access_code_button").on("click", function() {
+            	var access_code = md5($(".access_code").val()); 
+            	// alert(md5(access_code));
+            	if(access_code === "e5a8f7c3c58e8e97f47a739a00e10bc8") {
+            		window.location.href = "../gandalf/gandalf.html";
+            	} else if(access_code === "dc5abaca78d0d502d79f8bc5e99438e4") {
+            		window.location.href = "../gandalf/gandalf.html";
+            	} else {
+            		alert("Please enter correct Access Code");
+            	}
+            });
         })
 
 
-		
-		
 
 
 
 
 
-    
+
+
+

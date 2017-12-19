@@ -33,7 +33,7 @@ label {
     font-size:32px; max-width:325px; text-align:center
   }
   
-  a.button1 {
+  .button1 {
     text-decoration: none;
     color: white;
     display: inline;
@@ -45,9 +45,10 @@ label {
     max-width: 200px;
     text-align: center;
     padding: 10px;
+    font-family: Times;
     }
 
-    a.button2 {
+    .button2 {
       text-decoration: none;
       color: white;
       display: inline;
@@ -59,4 +60,17 @@ label {
       max-width: 200px;
       text-align: center;
       padding: 10px;
+      font-family: Times;
+        }
+
+        .access_code_block {
+         display:none;
+         color: white;
+         position: absolute;
+         top: 99%;
+         left: 64%;
+         background-color: black;
+         font-family: Times; 
+         font-size: 30px;
+         padding: 10px;
         }

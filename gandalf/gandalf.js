@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  let audio = new Audio('SupermanTheme.mp3');
-  audio.play();
   $(".earth").click(function(){
     setTimeout(function() {
       window.location.href = "../renaissance/renaissance.html";

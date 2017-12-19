@@ -54,19 +54,19 @@ $(document).ready(function() {
         {answer:"United States", response:"Not quite, the United States passed this law in 1920 ", correct:false},
         {answer:"New Zealand", response:"Yes, New Zealand passed this in 1893", correct:true}
     ]
-   
+
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
-            $(".questions").append("<input type='radio' id="+questions[i].answer.replace(/ /g, '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(/ /g, '')+">"+questions[i].answer+"</label><br>") 
+            $(".questions").append("<input type='radio' id="+questions[i].answer.replace(/ /g, '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(/ /g, '')+">"+questions[i].answer+"</label><br>")
             $("#"+questions[i].answer.replace(/ /g, '')).on("click", function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
 
             let val = $(this).val()
-            
+
                         if (questions[i].answer === 'New Zealand') {
-                            if(localStorage.level < 11) {  
+                            if(localStorage.level < 11) {
                             localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                             setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
                             setTimeout(function() {
@@ -75,10 +75,17 @@ $(document).ready(function() {
                         }
                     }
 
+                    if (questions[i].answer === 'United States') {
+                        $(".fe-vote-wrapper, .fe-vote-message, .mainImage").toggle();
+                        setTimeout(function() {$(".fe-vote-wrapper").hide();}, 7000);
+                        setTimeout(function() {$(".fe-vote-message").hide();}, 7000);
+                        setTimeout(function() {$(".mainImage").show();}, 7000);
+                    }
+
             setTimeout(catSpeaks, 1000, questions[i].response)
             console.log("Hello");
             setTimeout(function () {
-                $("input:radio").each(function () {  
+                $("input:radio").each(function () {
                     $(this).removeAttr('checked');
                     $('input[type="radio"]').prop('checked', false);
                    })
