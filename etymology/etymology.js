@@ -44,9 +44,9 @@ $(document).ready(function() {
     let val = $(this).val()
 
     if (val === 'Scire') {
-
-        if(localStorage.level < 2) {
-            localStorage.level++;
+        
+        if(localStorage.level_etymology != "yes") {
+            localStorage.level_etymology = "yes";
 
             localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
             setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");

@@ -5,6 +5,7 @@ function showPurrCoins() {
 	document.body.appendChild(el);
 }
 
+
 function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
@@ -66,20 +67,23 @@ $(document).ready(function() {
             let val = $(this).val()
 
                         if (questions[i].answer === 'New Zealand') {
-                            if(localStorage.level < 11) {
+                            if(localStorage.level_female_vote != "yes") {
+                                localStorage.level_female_vote = "yes"; 
                             localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                             setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
                             setTimeout(function() {
-                                window.location.href = "../nike/nike.html";
+                                window.location.href = "../chariot/greek_goddess_chariot.html";
                             }, 8000);
                         }
                     }
 
                     if (questions[i].answer === 'United States') {
-                        $(".fe-vote-wrapper, .fe-vote-message, .mainImage").toggle();
+                        setTimeout(function() {
+                          $(".fe-vote-wrapper, .fe-vote-message, .mainScene").toggle()
+                        }, 3000);
                         setTimeout(function() {$(".fe-vote-wrapper").hide();}, 7000);
                         setTimeout(function() {$(".fe-vote-message").hide();}, 7000);
-                        setTimeout(function() {$(".mainImage").show();}, 7000);
+                        setTimeout(function() {$(".mainScene").show();}, 7000);
                     }
 
             setTimeout(catSpeaks, 1000, questions[i].response)

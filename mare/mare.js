@@ -43,17 +43,17 @@ $(document).ready(function() {
 
             let val = $(this).val()
             
-                        if (val === 'Sea') {
-                            if(localStorage.level < 5) {
-                                localStorage.level++;    
-                                localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-                            }
-                                setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                                setTimeout(function() {
-                                    window.location.href = "../earth/earth.html";
-                                }, 8000);
-                        }
-                        showPurrCoins();
+            if (val === 'Sea') {
+                if(localStorage.level_mare != "yes") {
+                    localStorage.level_mare = "yes"; 
+                    localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                }
+                    setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                    setTimeout(function() {
+                        window.location.href = "../earth/earth.html";
+                    }, 8000);
+                }
+                showPurrCoins();
             
             setTimeout(catSpeaks, 1000, questions[i].response)
             console.log("Hello");

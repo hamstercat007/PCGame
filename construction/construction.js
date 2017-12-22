@@ -48,11 +48,21 @@ $(document).ready(function() {
 			
             $(".access_code_button").on("click", function() {
             	var access_code = md5($(".access_code").val()); 
-            	// alert(md5(access_code));
             	if(access_code === "e5a8f7c3c58e8e97f47a739a00e10bc8") {
-            		window.location.href = "../gandalf/gandalf.html";
+					setTimeout("$('#two_cats').attr('src','building.png');", 2000);
+					setTimeout(catSpeaks, 3000, "Paw Five! We just hired a couple of extra paws, thanks to you");
+					setTimeout(function() {
+						window.location.href = "../gandalf/gandalf.html";
+						}, 7000)	
+				
             	} else if(access_code === "dc5abaca78d0d502d79f8bc5e99438e4") {
-            		window.location.href = "../gandalf/gandalf.html";
+            		
+				setTimeout("$('#two_cats').attr('src','building.png');", 2000);
+				setTimeout(catSpeaks, 3000, "Paw Five! We hired a couple of extra paws, thanks to you");
+					setTimeout(function() {
+						window.location.href = "../gandalf/gandalf.html";
+					}, 7000)
+
             	} else {
             		alert("Please enter correct Access Code");
             	}

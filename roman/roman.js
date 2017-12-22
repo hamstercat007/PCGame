@@ -51,8 +51,8 @@ $(document).ready(function() {
             let val = $(this).val()
             
                         if (val === 'Victoria') {
-                            if(localStorage.level < 13) {
-                                localStorage.level++;
+                            if(localStorage.level_roman != "yes") {
+                                localStorage.level_roman = "yes";  
 
                             localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                             setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");

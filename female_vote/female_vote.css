@@ -14,8 +14,9 @@ label {
     padding-left: 8px;
   }
 
+
   .questions {
-    position:absolute;top:40%;left:70%;background-color:transparent;
+    position:absolute;top:36%;left:70%;background-color:transparent;
     font-size:32px; max-width:300px; text-align:left
   }
 
@@ -25,8 +26,8 @@ label {
         color: white;
         display: inline;
         position: absolute;
-        top: 75%;
-        left: 70%;
+        top: 55%;
+        left: 85%;
         background-color: black;
         font-size: 32px;
         max-width: 200px;
@@ -49,7 +50,7 @@ label {
     top:0;
     left:0;
     z-index: 100;
-        animation-name:flash2;
+    animation-name:flash2;
     animation-fill-mode: both;
     animation-duration:2s;
   transition: transform ease-in 2s;

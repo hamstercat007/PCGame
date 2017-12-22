@@ -11,7 +11,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
+		"position:absolute;top:24%;left:60%;background-color:white; font-size:40px; max-width:300px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
@@ -49,8 +49,8 @@ $(document).ready(function() {
 
             if (val === 'Electrons') {
                    
-                if(localStorage.level < 1) {
-                    localStorage.level++;
+                if(localStorage.level_science != "yes") {
+                    localStorage.level_science = "yes";
     
                 localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                 setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");

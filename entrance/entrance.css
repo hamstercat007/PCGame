@@ -182,3 +182,9 @@
   transform: rotate(50deg) scale(0.5) scaleX(-1) translate(-100px);
   transition-duration: 2s; 
 }
+
+#entrance .orange {
+  background-color:orange;
+  border-radius: 10px;
+  border: 1px darkorange solid
+}

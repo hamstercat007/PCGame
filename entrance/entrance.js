@@ -63,6 +63,12 @@ $(document).ready(function() {
   $("#entrance").submit(function(event) {
     event.preventDefault();
     catSpeaks($("input[name=option]:checked").val());
+
+    if ($("input[name=option]:checked").val() == "The cat likes it and purrs, but looks at you expectantly") {
+      let audio = new Audio('purring.mp3');
+      audio.play();
+    }
+
     if ($("input[name=option]:checked").val() == "The cat eats it and smiles") {
       pickedChicken();
     }

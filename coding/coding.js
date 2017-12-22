@@ -1,21 +1,15 @@
-function showPurrCoins() {
-    var el = document.createElement("div");
-    $(el).addClass('purrCoin');
-	el.innerHTML = localStorage.purrCoins;
-	document.body.appendChild(el);
-}
 
 function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:60%;background-color:white; font-size:35px; max-width:250px; text-align:center"
+		"position:absolute;top:54%;left:65%;background-color:white; font-size:35px; max-width:250px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
 	setTimeout(function() {
 	 	el.parentNode.removeChild(el);
-	 }, 4000);
+	 }, 2500);
 	document.body.appendChild(el);
 }
 
@@ -39,6 +33,7 @@ $(document).ready(function() {
         {answer:"Hickory Tickory Miaow Land", response:"Not quite", correct:false, note: "Good guess though!"},
     ]
    
+    // Insert Answer options to the main div
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
             $(".questions").append("<input type='radio' id="+questions[i].answer.replace(/ /g, '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(/ /g, '')+">"+questions[i].answer+"</label><br>") 
@@ -49,8 +44,8 @@ $(document).ready(function() {
                 let val = $(this).val()  
                 
                 if (questions[i].answer === "Hypertext Markup Language") {
-                    if(localStorage.level < 6) {
-                        localStorage.level++;    
+                    if(localStorage.level_coding != "yes") {
+                        localStorage.level_coding = "yes";    
                         localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                     }
                         setTimeout(catSpeaks, 7000, "You now have "+localStorage.purrCoins+" purr coins");

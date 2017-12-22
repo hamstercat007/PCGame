@@ -9,13 +9,13 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
+		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:300px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
 	setTimeout(function() {
 	 	el.parentNode.removeChild(el);
-	 }, 4000);
+	 }, 3000);
 	document.body.appendChild(el);
 }
 
@@ -39,8 +39,8 @@ $(document).ready(function() {
     showPurrCoins();
     setTimeout(narratorSpeaks, 0, "Naptime!");
 	setTimeout(catSpeaks, 1000, "Take a snooze!");
-	let audio = new Audio('cat-purring.mp3');
+	let audio = new Audio('purring.mp3');
     audio.play();
-    setTimeout(catSpeaks, 3000, "You've earnt it! When you're ready, click 'Next'!");
-    setTimeout(catSpeaks, 5000, "Hmmm, seabass or cod, what should I have for dinner?");
+    setTimeout(catSpeaks, 3000, "You've earnt it! When you're ready, click on Level 2!");
+    setTimeout(catSpeaks, 6000, "Hmmm, seabass or cod, what should I have for dinner?");
 })

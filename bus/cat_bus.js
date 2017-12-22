@@ -1,12 +1,9 @@
 
-
-
-
 function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:60%;background-color:white; font-size:38px; max-width:150px; text-align:center"
+		"position:absolute;top:30%;left:60%;background-color:white; font-size:38px; max-width:250px; text-align:center"
     );
     $(el).addClass('speech');
 	el.innerHTML = msg;
@@ -16,18 +13,27 @@ function catSpeaks(msg) {
 	document.body.appendChild(el);
 }
 
-function showPurrCoins() {
-    var el = document.createElement("div");
-    $(el).addClass('purrCoin');
-	el.innerHTML = localStorage.purrCoins;
-	document.body.appendChild(el);
-}
 
 
 $(document).ready(function() {
     setTimeout(catSpeaks, 3000, "You are allocated 7 purr coins to start your adventure into Purr City");
     localStorage.setItem("purrCoins", 7);
-    localStorage.setItem("level", 0);
+    localStorage.setItem("level_science", "");
+    localStorage.setItem("level_etymology", "");
+    localStorage.setItem("level_linneaus", "");
+    localStorage.setItem("level_library", "");
+    localStorage.setItem("level_mare", "");
+    localStorage.setItem("level_earth", "");
+    localStorage.setItem("level_pamper", "");
+    localStorage.setItem("level_coding", "");
+    localStorage.setItem("level_democracy", "");
+    localStorage.setItem("level_female_vote", "");
+    localStorage.setItem("level_greek_goddess_chariot", "");
+    localStorage.setItem("level_roman", "");
+    localStorage.setItem("level_newton", "");
+
+
+
     showPurrCoins();
     setTimeout(catSpeaks, 7000, "The bus fare is 1 purr coin");
     setTimeout(catSpeaks, 10500, "Please place your paw over the card reader to pay your fare");

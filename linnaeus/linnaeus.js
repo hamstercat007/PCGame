@@ -9,7 +9,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:30%;left:60%;background-color:white; font-size:40px; max-width:300px; text-align:center"
+		"position:absolute;top:25%;left:60%;background-color:white; font-size:40px; max-width:330px; text-align:center"
     );
     $(el).addClass('speech');
 	el.innerHTML = msg;
@@ -40,8 +40,11 @@ $(document).ready(function() {
         let val = $(this).val()
     
             if (questions[i].answer === "Felis Catus") {
-                if(localStorage.level < 3) {
-                    localStorage.level++;
+
+            if(localStorage.level_linnaeus != "yes") {
+            localStorage.level_linnaeus = "yes";
+
+
                     console.log(localStorage.level)
                     localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                     console.log(localStorage.purrCoins);

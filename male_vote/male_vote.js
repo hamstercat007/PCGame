@@ -49,7 +49,7 @@ $(document).ready(function() {
     signpost("The Statue of Liberty, <br>based in New York, United States of America");
     showQuestion("Level 3<br>Q3. Which was the first country to enable the majority of men to vote?");
     let questions=[
-        {answer:"Great Britain", response:"Not quite, Great Britain passed this law in 1918, as soldiers fought in the First World War (1914-1918) but were not able to vote", correct:false},
+        {answer:"Great Britain", response:"Not quite, Great Britain passed this law in 1918, as soldiers had to fight in the First World War (1914-1918) but were not able to vote", correct:false},
         {answer:"France", response:"Yes, all men over 25 voted in 1792 for an assembly", correct:false},
         {answer:"Switzerland", response:"Almost there, Switzerland allowed most men to vote in 1848", correct:true}
     ]
@@ -64,13 +64,14 @@ $(document).ready(function() {
 
             let val = $(this).val()
             
-                        if (questions[i].answer === "France") {
-                            if(localStorage.level < 11) {  
-                            localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-                            setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                            setTimeout(function() {
-                                window.location.href = "../female_vote/female_vote.html";
-                            }, 8000);
+            if (questions[i].answer === "France") {
+                if(localStorage.level_male_vote != "yes") {
+                    localStorage.level_male_vote = "yes"; 
+                localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                setTimeout(function() {
+                    window.location.href = "../female_vote/female_vote.html";
+                    }, 8000);
                         }
                     }
 

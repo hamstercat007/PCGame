@@ -49,9 +49,8 @@ $(document).ready(function() {
         var status =  "incorrect";
         if ($(this).hasClass("earth")) {
             status =  "correct";
-            if (localStorage.level < 6) {
-                localStorage.level++;
-                console.log(localStorage.level)
+            if(localStorage.level_earth != "yes") {
+                localStorage.level_earth = "yes"; 
                 localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
             }
             setTimeout(catSpeaks, 5000, "coins");

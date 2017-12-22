@@ -47,23 +47,19 @@ $(document).ready(function() {
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
-
-            console.log(localStorage.level);
-
             let val = $(this).val()
             if (val === 'demos') {
                 
-                    if(localStorage.level < 14) {
-                        localStorage.level++;
-                        localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                if(localStorage.level_democracy != "yes") {
+                    localStorage.level_democracy = "yes"; 
+                    localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
 
-                        setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                        setTimeout(function() {
-                            window.location.href = "../male_vote/male_vote.html";
-                        }, 7000);
-
-                    }
+                    setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                    setTimeout(function() {
+                    window.location.href = "../male_vote/male_vote.html";
+                    }, 7000);
                 }
+            }
 
 
             setTimeout(catSpeaks, 1000, questions[i].response)

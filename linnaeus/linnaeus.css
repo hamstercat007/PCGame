@@ -5,8 +5,8 @@ label {
   }
   
   .questions {
-    position:absolute;top:75%;left:46%;background-color:transparent;
-    font-size:32px; max-width:350px; text-align:left;
+    position:absolute;top:70%;left:45%;background-color:transparent;
+    font-size:32px; max-width:375px; text-align:left;
   }
   
   a.button {
@@ -14,7 +14,7 @@ label {
         color: white;
         display: inline;
         position: absolute;
-        top: 75%;
+        top: 78%;
         left: 70%;
         background-color: black;
         font-size: 32px;

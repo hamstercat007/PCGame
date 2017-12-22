@@ -22,7 +22,7 @@ $(document).ready(function() {
         setTimeout(catSpeaks, 500, "Open the gates before the cat wakes up");
 
         setTimeout(function() {
-            window.location.href = "../gandalf/gandalf.html";
+            window.location.href = "../construction/construction.html";
         }, 3000);
     });
 })

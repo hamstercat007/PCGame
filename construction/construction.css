@@ -38,7 +38,7 @@ label {
     color: white;
     display: inline;
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 64%;
     background-color: black;
     font-size: 30px;
@@ -53,7 +53,7 @@ label {
       color: white;
       display: inline;
       position: absolute;
-      top: 85%;
+      top: 75%;
       left: 64%;
       background-color: black;
       font-size: 30px;
@@ -67,10 +67,11 @@ label {
          display:none;
          color: white;
          position: absolute;
-         top: 99%;
+         top: 89%;
          left: 64%;
          background-color: black;
          font-family: Times; 
          font-size: 30px;
          padding: 10px;
         }
+

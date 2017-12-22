@@ -9,7 +9,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:27%;left:60%;background-color:white; font-size:40px; max-width:200px; text-align:center"
+		"position:absolute;top:24%;left:60%;background-color:white; font-size:40px; max-width:250px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
@@ -37,9 +37,8 @@ function narratorSpeaks(msg) {
 
 $(document).ready(function() {
 	showPurrCoins();
-	if(localStorage.level < 5) {
-		localStorage.level++;
-		console.log(localStorage.level);
+	if(localStorage.level_pamper != "yes") {
+		localStorage.level_pamper = "yes"; 
 		localStorage.purrCoins-=2;
 		showPurrCoins();
 	};
@@ -50,5 +49,5 @@ $(document).ready(function() {
     
     showPurrCoins()
     setTimeout(catSpeaks, 10000, "You now have "+localStorage.purrCoins+" purr coins");
-    setTimeout(catSpeaks, 12500, "When you're ready, click 'Next'");
+    setTimeout(catSpeaks, 12500, "When you're ready, click on 'Level 3'");
 })

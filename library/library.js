@@ -39,17 +39,17 @@ $(document).ready(function() {
 
             let val = $(this).val()
             
-                        if (val === 'Books') {
-                            if(localStorage.level < 4) {
-                                localStorage.level++;            
-                                localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
-                            }
-                            setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
-                                setTimeout(function() {
-                                    window.location.href = "../pamper/pamper.html";
-                            }, 8000);
+            if (val === 'Books') {
                             
-                        }
+                if(localStorage.level_library != "yes") {
+                    localStorage.level_library = "yes";
+                    localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
+                }
+                setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
+                setTimeout(function() {
+                    window.location.href = "../pamper/pamper.html";
+                }, 8000);                
+            }
                         
                         showPurrCoins();
         
