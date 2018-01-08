@@ -9,7 +9,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:15%;left:63%;background-color:white; font-size:40px; max-width:250px; text-align:center"
+		"position:absolute;top:8%;left:63%;background-color:white; font-size:40px; max-width:250px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
@@ -43,20 +43,22 @@ $(document).ready(function() {
 			});
 			
 			$(".button1").on("click", function() {
-				$(".morePaws").submit();
+				$(".morePaws").submit();;
 			})
 			
             $(".access_code_button").on("click", function() {
-            	var access_code = md5($(".access_code").val()); 
+				var access_code = md5($(".access_code").val()); 
+				//alert(access_code);
             	if(access_code === "e5a8f7c3c58e8e97f47a739a00e10bc8") {
+					$(".payment").fadeIn(slow);
 					setTimeout("$('#two_cats').attr('src','building.png');", 2000);
 					setTimeout(catSpeaks, 3000, "Paw Five! We just hired a couple of extra paws, thanks to you");
 					setTimeout(function() {
 						window.location.href = "../gandalf/gandalf.html";
-						}, 7000)	
+						}, 8000)	
 				
             	} else if(access_code === "dc5abaca78d0d502d79f8bc5e99438e4") {
-            		
+					$(".payment").fadeIn(slow);	
 				setTimeout("$('#two_cats').attr('src','building.png');", 2000);
 				setTimeout(catSpeaks, 3000, "Paw Five! We hired a couple of extra paws, thanks to you");
 					setTimeout(function() {
@@ -68,6 +70,7 @@ $(document).ready(function() {
             	}
             });
         })
+
 
 
 

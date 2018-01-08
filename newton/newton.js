@@ -1,9 +1,4 @@
-function showPurrCoins() {
-    var el = document.createElement("div");
-    $(el).addClass('purrCoin');
-	el.innerHTML = localStorage.purrCoins;
-	document.body.appendChild(el);
-}
+
 
 function catSpeaks(msg) {
 	var el = document.createElement("div");
@@ -45,9 +40,9 @@ $(document).ready(function() {
 
     showQuestion("Level 4 - Resting against a tree");
     let questions=[
-        {answer:"Momentum", response:"Not quite, Venus was the Roman goddess of beauty", note: "her Greek counterpart is known as Aphrodite", correct:false, },
+        {answer:"Momentum", response:"Close, momentum is the measure of movement that an object has", note: "this depends on the size of the object and its speed", correct:false, },
         {answer:"Force", response:"Almost, this is certainly a downward force", note: "but there's a special name for this", correct:false},
-        {answer:"Gravity", response:"Yes, Nike means victory in Greek, she is the Greek goddess of victory", note:"She carries a wreath in her hand, ready to crown a victor", correct:true}
+        {answer:"Gravity", response:"Yes, gravity is the force which pulls objects towards the earth", note:"Without it, you would float into the atmosphere", correct:true}
     ]
    
             $(".questions").append("<div class='options'></div>")
@@ -60,7 +55,7 @@ $(document).ready(function() {
 
             let val = $(this).val()
             
-                if (val === 'Nike') {
+                if (val === 'Gravity') {
                     if(localStorage.level_newton != "yes") {
                         localStorage.level_newton = "yes";    
                         localStorage.purrCoins = Number(localStorage.purrCoins) + 1;

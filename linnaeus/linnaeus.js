@@ -1,9 +1,4 @@
-function showPurrCoins() {
-    var el = document.createElement("div");
-    $(el).addClass('purrCoin');
-	el.innerHTML = localStorage.purrCoins;
-	document.body.appendChild(el);
-}
+
 
 function catSpeaks(msg) {
 	var el = document.createElement("div");
@@ -40,12 +35,11 @@ $(document).ready(function() {
         let val = $(this).val()
     
             if (questions[i].answer === "Felis Catus") {
-
             if(localStorage.level_linnaeus != "yes") {
             localStorage.level_linnaeus = "yes";
 
 
-                    console.log(localStorage.level)
+        
                     localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                     console.log(localStorage.purrCoins);
                 }

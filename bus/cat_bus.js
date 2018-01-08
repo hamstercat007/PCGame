@@ -20,7 +20,7 @@ $(document).ready(function() {
     localStorage.setItem("purrCoins", 7);
     localStorage.setItem("level_science", "");
     localStorage.setItem("level_etymology", "");
-    localStorage.setItem("level_linneaus", "");
+    localStorage.setItem("level_linnaeus", "");
     localStorage.setItem("level_library", "");
     localStorage.setItem("level_mare", "");
     localStorage.setItem("level_earth", "");

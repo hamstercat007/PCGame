@@ -16,6 +16,7 @@ function showPurrCoins() {
     var el = document.createElement("div");
     $(el).addClass('purrCoin');
 	el.innerHTML = localStorage.purrCoins;
+	$(".purrCoin").remove();
 	document.body.appendChild(el);
 }
 

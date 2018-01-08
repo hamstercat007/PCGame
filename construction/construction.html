@@ -2,7 +2,6 @@
     <html>
         <head>
                 <!--<link rel="stylesheet" href="../main.css">-->
-                <link rel="stylesheet" href="../main.css">
                 <link rel="stylesheet" href="construction.css">
                 <script src="../js/jquery-3.2.1.min.js"></script>
                 <!--<script src="../main.js"></script>-->
@@ -12,17 +11,22 @@
         <body>
              
 
-            <img id="two_cats" src="less_cats_building_larger.png" class="mainImage"  alt="Cats building Purr City"/>
+            <img id="two_cats" src="less_cats_building776.png" alt="Cats building Purr City"/>
 
             <button class="button1">Give 3 purr coins to access code</button>
             <button class="button2">Enter Access code</button>
+
+            <div style="position:absolute;top:8%;left:85%; width:100px; display:none" class="payment">
+                <img src="../images/newpurrcoin.png">
+                <img src="../images/newpurrcoin.png">
+                <img src="../images/newpurrcoin.png">
+            </div>
 
             <div class="access_code_block">
                     Access Code
                     <input type="text" name="access_code" class="access_code" >
                     <button class="access_code_button">Submit</button>
                 </div>
-
 
             <form name="morePaws" class="morePaws" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:none">
                 <input type="hidden" name="cmd" value="_s-xclick">

@@ -1,9 +1,3 @@
-function showPurrCoins() {
-    var el = document.createElement("div");
-    $(el).addClass('purrCoin');
-	el.innerHTML = localStorage.purrCoins;
-	document.body.appendChild(el);
-}
 
 function catSpeaks(msg) {
 	var el = document.createElement("div");
@@ -33,8 +27,6 @@ function narratorSpeaks(msg) {
 	//}, 2000);
 	document.body.appendChild(el);
 }
-
-
 
 
 

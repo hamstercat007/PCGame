@@ -1,9 +1,4 @@
-function showPurrCoins() {
-    var el = document.createElement("div");
-    $(el).addClass('purrCoin');
-	el.innerHTML = localStorage.purrCoins;
-	document.body.appendChild(el);
-}
+
 
 function catSpeaks(msg) {
 	var el = document.createElement("div");
@@ -40,7 +35,7 @@ $(document).ready(function() {
 	if(localStorage.level_pamper != "yes") {
 		localStorage.level_pamper = "yes"; 
 		localStorage.purrCoins-=2;
-		showPurrCoins();
+		//showPurrCoins();
 	};
     setTimeout(narratorSpeaks, 0, "Pamper time: 2 Purr Coins");
     setTimeout(catSpeaks, 2500, "Take a break, you deserve it with those hard earned purr coins!");
