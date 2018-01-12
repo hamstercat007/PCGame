@@ -1,14 +1,14 @@
 .purrCoin {
   padding: 50px;
   position: absolute;
-  top: 8%;
+  top: 6%;
   left: 70%;
   background-color: transparent;
-  background-image: url("images/newpurrcoin.png");
+  background-image: url("images/purrcoin.png");
   background-repeat: no-repeat;
   font-size: 25px;
   max-width: 250px;
-  text-indent: 77px;
+  text-indent: 84px;
   text-align: center;
 }
 

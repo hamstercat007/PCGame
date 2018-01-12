@@ -38,6 +38,8 @@ $(document).ready(function() {
         for (let i=0; i<questions.length; i++) {
             $(".questions").append("<input type='radio' id="+questions[i].answer.replace(/ /g, '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(/ /g, '')+">"+questions[i].answer+"</label><br>") 
             $("#"+questions[i].answer.replace(/ /g, '')).on("click", function() {
+                let audio = new Audio('../click-effect.mp3');
+                audio.play();
                 $(this).css("color", "blue");
                 console.log(this);
                 $(this).prop('checked', true);

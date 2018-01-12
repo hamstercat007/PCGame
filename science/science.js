@@ -33,6 +33,8 @@ $(document).ready(function() {
             )
 
             $("#"+questions[i].answer).on("click", function() {
+                let audio = new Audio('../click-effect.mp3');
+                audio.play();
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);

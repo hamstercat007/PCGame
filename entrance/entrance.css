@@ -186,5 +186,6 @@
 #entrance .orange {
   background-color:orange;
   border-radius: 10px;
-  border: 1px darkorange solid
+  /*border: 2px darkorange solid*/
+  border: 2px outset darkorange 
 }

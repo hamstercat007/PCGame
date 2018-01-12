@@ -44,6 +44,8 @@ function narratorSpeaks(msg) {
 
 
 $(document).ready(function() {
+  let audio = new Audio('magic-spells.mp3');
+  audio.play();
   setTimeout(narratorSpeaks, 500, "Congratulations, you have reached the gates of Purr City")
   setTimeout(narratorSpeaks, 3500, "But the gates are locked, and guarded by the vigilent Pawkeeper")
   setTimeout(narratorSpeaks, 6500, "You have a chicken drumstick and some milk in your satchel")
@@ -63,6 +65,8 @@ $(document).ready(function() {
   $("#entrance").submit(function(event) {
     event.preventDefault();
     catSpeaks($("input[name=option]:checked").val());
+    let audio = new Audio('../click-effect.mp3');
+    audio.play();
 
     if ($("input[name=option]:checked").val() == "The cat likes it and purrs, but looks at you expectantly") {
       let audio = new Audio('purring.mp3');

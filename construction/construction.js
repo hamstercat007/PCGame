@@ -50,7 +50,9 @@ $(document).ready(function() {
 				var access_code = md5($(".access_code").val()); 
 				//alert(access_code);
             	if(access_code === "e5a8f7c3c58e8e97f47a739a00e10bc8") {
-					$(".payment").fadeIn(slow);
+					let audio = new Audio('wand.mp3');
+                    audio.play();
+					$(".payment").fadeIn(1000);
 					setTimeout("$('#two_cats').attr('src','building.png');", 2000);
 					setTimeout(catSpeaks, 3000, "Paw Five! We just hired a couple of extra paws, thanks to you");
 					setTimeout(function() {
@@ -58,7 +60,9 @@ $(document).ready(function() {
 						}, 8000)	
 				
             	} else if(access_code === "dc5abaca78d0d502d79f8bc5e99438e4") {
-					$(".payment").fadeIn(slow);	
+					let audio = new Audio('wand.mp3');
+                    audio.play();
+					$(".payment").fadeIn(1000);	
 				setTimeout("$('#two_cats').attr('src','building.png');", 2000);
 				setTimeout(catSpeaks, 3000, "Paw Five! We hired a couple of extra paws, thanks to you");
 					setTimeout(function() {

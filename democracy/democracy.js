@@ -39,6 +39,8 @@ $(document).ready(function() {
         for (let i=0; i<questions.length; i++) {
         $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
         $("#"+questions[i].answer).on("click", function() {
+            let audio = new Audio('../click-effect.mp3');
+            audio.play();
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
@@ -58,7 +60,7 @@ $(document).ready(function() {
 
 
             setTimeout(catSpeaks, 1000, questions[i].response)
-            setTimeout(catSpeaks, 3500, questions[i].note)
+            setTimeout(catSpeaks, 4000, questions[i].note)
 
                  
             setTimeout(function () {

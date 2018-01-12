@@ -37,10 +37,12 @@ $(document).ready(function() {
 		localStorage.purrCoins-=2;
 		//showPurrCoins();
 	};
+	/*let audio = new Audio('Happy_Ukulele.mp3');
+    audio.play();*/
     setTimeout(narratorSpeaks, 0, "Pamper time: 2 Purr Coins");
     setTimeout(catSpeaks, 2500, "Take a break, you deserve it with those hard earned purr coins!");
     setTimeout(catSpeaks, 5000, "Enjoy some fur treatments and having your fur groomed!");
-    setTimeout(catSpeaks, 7500, "All cats deserve relaxation time");
+    setTimeout(catSpeaks, 7500, "Listen to the music, and relax! All cats deserve relaxation time");
     
     showPurrCoins()
     setTimeout(catSpeaks, 10000, "You now have "+localStorage.purrCoins+" purr coins");

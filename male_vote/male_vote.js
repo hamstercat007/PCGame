@@ -1,9 +1,4 @@
-function showPurrCoins() {
-    var el = document.createElement("div");
-    $(el).addClass('purrCoin');
-	el.innerHTML = localStorage.purrCoins;
-	document.body.appendChild(el);
-}
+
 
 function catSpeaks(msg) {
 	var el = document.createElement("div");
@@ -50,7 +45,7 @@ $(document).ready(function() {
     showQuestion("Level 3<br>Q3. Which was the first country to enable the majority of men to vote?");
     let questions=[
         {answer:"Great Britain", response:"Not quite, Great Britain passed this law in 1918, as soldiers had to fight in the First World War (1914-1918) but were not able to vote", correct:false},
-        {answer:"France", response:"Yes, all men over 25 voted in 1792 for an assembly", correct:false},
+        {answer:"France", response:"Yes, all men over 25 voted in 1792 for a national assembly", correct:false},
         {answer:"Switzerland", response:"Almost there, Switzerland allowed most men to vote in 1848", correct:true}
     ]
    
@@ -58,6 +53,8 @@ $(document).ready(function() {
         for (let i=0; i<questions.length; i++) {
             $(".questions").append("<input type='radio' id="+questions[i].answer.replace(/ /g, '') + " value="+questions[i].answer+"><label for="+questions[i].answer.replace(/ /g, '')+">"+questions[i].answer+"</label><br>") 
             $("#"+questions[i].answer.replace(/ /g, '')).on("click", function() {
+                let audio = new Audio('../click-effect.mp3');
+                audio.play();
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);

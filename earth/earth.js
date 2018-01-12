@@ -41,6 +41,8 @@ $(document).ready(function() {
     showQuestion("Level 2<br>Q3. Does the earth go round the sun, or does the sun go round the earth? </br></br>Click on the correct image");
 
     $(".rotation").one("click", function() {
+        let audio = new Audio('../click-effect.mp3');
+        audio.play();
         var status =  "incorrect";
         if ($(this).hasClass("earth")) {
             status =  "correct";

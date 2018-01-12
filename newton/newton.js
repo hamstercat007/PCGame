@@ -49,6 +49,8 @@ $(document).ready(function() {
         for (let i=0; i<questions.length; i++) {
         $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
         $("#"+questions[i].answer).on("click", function() {
+            let audio = new Audio('../click-effect.mp3');
+            audio.play();
             $(this).css("color", "blue");
             console.log(this);
             $(this).prop('checked', true);
@@ -61,7 +63,7 @@ $(document).ready(function() {
                         localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                         setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
                         setTimeout(function() {
-                        window.location.href = "../roman/roman.html";
+                        window.location.href = "../limbo/limbo.html";
                         }, 8000);
                      }
                 }

@@ -1,29 +1,9 @@
 $(document).ready(function(){
   $(".earth").click(function(){
+    let audio = new Audio('sci-fi-whoosh.mp3');
+    audio.play();
     setTimeout(function() {
       window.location.href = "../renaissance/renaissance.html";
-    }, 1000);
+    }, 3000);
   })
 });
-
-// let purrCoinWalletKey = "purrCoins"
-
-// function initPurrCoinWallet() {
-//    localStorage.setItem(purrCoinWalletKey, "7")
-// };
-
-// function removePurrCoint() {
-//   let currentBalance = localStorage.getItem(purrCoinWalletKey);
-
-// //create function which gets the current balance
-
-//   let newBalance = currentBalance--;
-//   localStorage.setItem(purrCoinWalletKey, newBalance);
-// };
-
-// function addPurrCoin() {
-//   let currentBalance = localStorage.getItem(purrCoinWalletKey).toFixed();
-//   //convert from string to number at home
-//   let newBalance = currentBalance--;
-//   localStorage.setItem(purrCoinWalletKey, newBalance);
-// }
