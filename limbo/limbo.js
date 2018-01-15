@@ -9,7 +9,7 @@ function catSpeaks(msg) {
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
-		"position:absolute;top:24%;left:60%;background-color:white; font-size:40px; max-width:300px; text-align:center"
+		"position:absolute;top:24%;left:60%;background-color:white; font-size:40px; max-width:450px; text-align:center"
     );
     $(el).addClass("speech");
 	el.innerHTML = msg;
@@ -40,5 +40,5 @@ $(document).ready(function() {
     showPurrCoins();
     setTimeout(narratorSpeaks, 0, "Playtime!");
 	setTimeout(catSpeaks, 1000, "Let's improve our flexibility with the limbo!");
-    setTimeout(catSpeaks, 4000, "Click 'Play'");
+    setTimeout(catSpeaks, 4000, "Click 'Play' to listen to some background music while we dance the limbo and build Purr City");
 })

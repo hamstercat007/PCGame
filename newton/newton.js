@@ -1,16 +1,24 @@
 
+$(document).ready(function() {
+    var start = new Date().getTime();
 
-function catSpeaks(msg) {
+
+
+
+function catSpeaks(msg,myClass,click,current1) {
+
 	var el = document.createElement("div");
 	el.setAttribute(
 		"style",
 		"position:absolute;top:30%;left:63%;background-color:white; font-size:40px; max-width:250px; text-align:center"
     );
-    $(el).addClass("speech");
+    $(el).addClass(myClass);
 	el.innerHTML = msg;
 	setTimeout(function() {
 	 	el.parentNode.removeChild(el);
+
 	 }, 3000);
+
 	document.body.appendChild(el);
 }
 
@@ -25,17 +33,22 @@ function showQuestion(msg) {
 	document.body.appendChild(el);
 }
 
-$(document).ready(function() {
+
+     var time1 = 2000;
+    var time2 = 5000;
+    var time3 = 8000;
+    var time4 = 11000;
+
     showPurrCoins();
-    setTimeout(catSpeaks, 2000, "Pawsome! It's time to take a break. You've reached the start of Level 4. Rest against this tree for a break!");
-    setTimeout(catSpeaks, 5000, "Suddenly an apple tumbles on your head");
+    var timeOut1 = setTimeout(catSpeaks, time1, "Pawsome! It's time to take a break. You've reached the start of Level 4. Rest against this tree for a break!",'speech3',false,1);
+    var timeOut2 = setTimeout(catSpeaks, time2, "Suddenly an apple tumbles on your head",'speech3',false,2);
     let audio = new Audio('fall_and_bang1.wav');
     setTimeout(function() {
         audio.play();
     }, 5000);
-    
-    setTimeout(catSpeaks, 8000, "Things in this world seem to fall in one direction, towards the earth");
-    setTimeout(catSpeaks, 13000, "I wonder what this is called?");
+
+    var timeOut3 = setTimeout(catSpeaks, time3, "Things in this world seem to fall in one direction, towards the earth",'speech3',false,3);
+    var timeOut4 = setTimeout(catSpeaks, time4, "I wonder what this is called?",'speech3',false,4);
 
 
     showQuestion("Level 4 - Resting against a tree");
@@ -44,10 +57,10 @@ $(document).ready(function() {
         {answer:"Force", response:"Almost, this is certainly a downward force", note: "but there's a special name for this", correct:false},
         {answer:"Gravity", response:"Yes, gravity is the force which pulls objects towards the earth", note:"Without it, you would float into the atmosphere", correct:true}
     ]
-   
+
             $(".questions").append("<div class='options'></div>")
         for (let i=0; i<questions.length; i++) {
-        $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>") 
+        $(".questions").append("<input type='radio' id="+questions[i].answer+" value="+questions[i].answer+"><label for="+questions[i].answer+">"+questions[i].answer+"</label><br>")
         $("#"+questions[i].answer).on("click", function() {
             let audio = new Audio('../click-effect.mp3');
             audio.play();
@@ -56,10 +69,10 @@ $(document).ready(function() {
             $(this).prop('checked', true);
 
             let val = $(this).val()
-            
+
                 if (val === 'Gravity') {
                     if(localStorage.level_newton != "yes") {
-                        localStorage.level_newton = "yes";    
+                        localStorage.level_newton = "yes";
                         localStorage.purrCoins = Number(localStorage.purrCoins) + 1;
                         setTimeout(catSpeaks, 5000, "You now have "+localStorage.purrCoins+" purr coins");
                         setTimeout(function() {
@@ -68,12 +81,22 @@ $(document).ready(function() {
                      }
                 }
                         showPurrCoins();
-            
-            setTimeout(catSpeaks, 1000, questions[i].response)
-            setTimeout(catSpeaks, 4000, questions[i].note)
+
+
+
+
+
+
+
+            var elapsed = new Date().getTime() - start;
+
+            myver = setTimeout(catSpeaks, 14200 - elapsed, questions[i].response,'speech3',true);
+            //
+            // setTimeout(catSpeaks, 4000, questions[i].note);
             console.log("Hello");
+            start = new Date().getTime();
             setTimeout(function () {
-                $("input:radio").each(function () {  
+                $("input:radio").each(function () {
                     $(this).removeAttr('checked');
                     $('input[type="radio"]').prop('checked', false);
                    })
