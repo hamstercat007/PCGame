@@ -19,7 +19,7 @@ $(document).ready(function() {
         e.preventDefault();
         let audio = new Audio('alert1.mp3');
         audio.play();
-        setTimeout(catSpeaks, 500, "Open the gates before the cat wakes up");
+        setTimeout(catSpeaks, 500, "Go through the gates before the paw-keeper wakes up");
 
         setTimeout(function() {
             window.location.href = "../construction/construction.html";

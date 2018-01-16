@@ -14,13 +14,13 @@ function catSpeaks(msg) {
 
 
 $(document).ready(function() {
+    setTimeout(catSpeaks, 500, "Take the key from the cat and go unlock the gates to Purr City");
   
     $("#Map").on("click", function(e){
         e.preventDefault();
         let audio = new Audio('alert1.mp3');
         audio.play();
-        setTimeout(catSpeaks, 500, "Now unlock the gates");
-        console.log("I'm working")
+        setTimeout(catSpeaks, 500, "Now open the gates");
         setTimeout(function() {
             window.location.href = "../opengate/opengate.html";
         }, 3000);
